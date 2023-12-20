@@ -1,0 +1,76 @@
+@font-face {
+  font-family: 'KAGE-Freebies-Black';
+  src: url('C:/Users/ACER/Downloads/kage/kage/KAGE-Freebies-Black.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.navbar {
+  list-style: none;
+  padding: 13px; /* Add padding to the navbar */
+  margin: 0; /* Remove default margin */
+  display: flex;
+  justify-content: space-around;
+  align-items: center; 
+  background-color: #a8937a;
+}
+
+.navbar li {
+  display: inline;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #e7e4de; 
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 570;
+  font-family: Verdana;
+}
+
+body {
+  background-color: #ada192;
+  margin: 0;
+}
+
+h1 {
+  color: #e7e4de;
+  font-family: 'KAGE-Freebies-Black';
+  font-size: 75px;
+  text-align: center;
+  margin-bottom: 20px; /* Add margin to bring down the title */
+}
+
+p {
+  color: #e7e4de;
+  text-align: center;
+  font-size: 23px;
+}
+
+/* Updated styling for each section */
+.awards,
+.work_exp,
+.ecs,
+.academics,
+.contact {
+  display: flex;
+  justify-content: space-around; /* Add space between images */
+  align-items: center;
+  height: auto; /* Change from 100vh to auto */
+  border-radius: 10px;
+  size: 80%;
+  margin-bottom: 20px;
+  padding: 20px; /* Add padding for space inside the sections */
+}
+
+/* Styling for the images */
+.awards img,
+.work_exp img,
+.ecs img,
+.academics img,
+.contact img {
+  width: 700px; /* Adjusted image width to be 10 times larger */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Make the images slightly rounded */
+  margin-right: 10px; /* Add margin between images */
+}
