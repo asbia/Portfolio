@@ -7,8 +7,8 @@
 
 .navbar {
   list-style: none;
-  padding: 13px; /* Add padding to the navbar */
-  margin: 0; /* Remove default margin */
+  padding: 13px; 
+  margin: 0; 
   display: flex;
   justify-content: space-around;
   align-items: center; 
@@ -38,7 +38,7 @@ h1 {
   font-family: 'KAGE-Freebies-Black';
   font-size: 75px;
   text-align: center;
-  margin-bottom: 20px; /* Add margin to bring down the title */
+  margin-bottom: 20px; 
 }
 
 p {
@@ -47,29 +47,29 @@ p {
   font-size: 23px;
 }
 
-/* Updated styling for each section */
+
 .awards,
 .work_exp,
 .ecs,
 .academics,
 .contact {
   display: flex;
-  justify-content: space-around; /* Add space between images */
+  justify-content: space-around; 
   align-items: center;
-  height: auto; /* Change from 100vh to auto */
+  height: auto;
   border-radius: 10px;
   size: 80%;
   margin-bottom: 20px;
-  padding: 20px; /* Add padding for space inside the sections */
+  padding: 20px; 
 }
 
-/* Styling for the images */
+
 .awards img,
 .work_exp img,
 .ecs img,
 .academics img,
 .contact img {
-  width: 700px; /* Adjusted image width to be 10 times larger */
+  width: 700px; 
   height: auto; /* Maintain aspect ratio */
   border-radius: 10px; /* Make the images slightly rounded */
   margin-right: 10px; /* Add margin between images */
