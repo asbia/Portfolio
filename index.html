@@ -1,73 +1,546 @@
-<html>
-    <head> <link rel="stylesheet" type="text/css" href="main.css">
-        
-        
-        <meta>
-        
-    </head>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aya Sbia · Software Engineer</title>
+  <meta name="description" content="Aya Sbia: software engineer and technical project lead. Computer Science (AI) at Al Akhawayn University.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='48' height='52' y='6' fill='%2318201D'/%3E%3Ccircle cx='22' cy='34' r='9' fill='%23F2480E'/%3E%3Ctext x='34' y='50' font-family='Georgia' font-size='44' fill='%231F4FCB'%3Ea%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="is-loading">
 
-    <title></title>
-  
-  <nav>
-    <ul class="navbar">
-      <li><a href="index.html">Home Page</a></li>
-      <li><a href="academics.html">My Academics</a></li>
-      <li><a href="ecs.html">Extracurriculars</a></li>
-      <li><a href="work.html">Work Experience</a></li>
-      <li><a href="awards.html">Awards</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+<!-- svg defs -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <path id="leaf" d="M0 0 C14 -15 40 -15 56 0 C40 15 14 15 0 0Z"/>
+    <g id="orange-fruit">
+      <circle r="40" fill="#F2480E"/>
+      <path d="M14 -30 A30 30 0 0 1 30 -12" fill="none" stroke="#FBD9C9" stroke-width="5" stroke-linecap="round" opacity=".85"/>
+    </g>
+  </defs>
+</svg>
+
+<!-- loader -->
+<div class="loader" aria-hidden="true">
+  <div class="loader__panes">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="loader__inner">
+    <div class="logo logo--xl">
+      <span class="logo__sq"></span><span class="logo__dot"></span><span class="logo__a">a</span>
+    </div>
+    <div class="loader__count"><span>0</span>%</div>
+  </div>
+</div>
+
+<!-- page transition -->
+<div class="wipe" aria-hidden="true"></div>
+
+<!-- cursor -->
+<div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+
+<!-- header -->
+<header class="header">
+  <a href="#top" class="logo" data-nav aria-label="Aya Sbia, back to top">
+    <span class="logo__sq"></span><span class="logo__dot"></span><span class="logo__a">a</span>
+  </a>
+  <nav class="nav" aria-label="Main">
+    <a href="#about" data-nav>About</a>
+    <a href="#experience" data-nav>Experience</a>
+    <a href="#work" data-nav>Work</a>
+    <a href="#beyond" data-nav>Leadership</a>
+    <a href="#contact" data-nav>Contact</a>
   </nav>
-  
-  
+  <div class="header__actions">
+    <button class="icon-btn" id="openPalette" aria-label="Search the site (Ctrl+K)" data-cursor="Search">
+      <svg viewBox="0 0 24 24" width="26" height="26"><circle cx="10.5" cy="10.5" r="7" fill="none" stroke="currentColor" stroke-width="2.6"/><path d="M15.8 15.8 21 21" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+    </button>
+    <button class="icon-btn icon-btn--heart" id="heartBtn" aria-label="Leave a like" data-cursor="Like">
+      <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.8 4.5c2.2 0 3.6 1.2 5.2 3 1.6-1.8 3-3 5.2-3 3.8 0 5.9 3.9 4.4 7.3C19.5 16.4 12 21 12 21z" fill="currentColor"/></svg>
+      <span class="heart-count" aria-live="polite"></span>
+    </button>
+  </div>
+</header>
 
+<main id="smooth">
 
-    <body>
+<!-- hero -->
+<section class="hero" id="top">
+  <div class="hero__copy">
+    <p class="eyebrow reveal-up">Software engineer · Technical project lead</p>
+    <h1 class="hero__title">
+      <span class="line"><span class="greet" aria-label="Hello">
+        <span class="greet__word is-active">Hello,</span>
+        <span class="greet__word" lang="fr">Bonjour,</span>
+        <span class="greet__word" lang="ar" dir="rtl">مرحبا،</span>
+        <span class="greet__word" lang="ja">こんにちは、</span>
+      </span></span>
+      <span class="line"><span>I’m <em>Aya</em> Sbia.</span></span>
+    </h1>
+    <p class="hero__lead reveal-up">I build software people rely on: university platforms used by <strong>5,000+ students</strong> and banking tools for <strong>major Moroccan banks</strong>. I’m a Computer Science senior at Al&nbsp;Akhawayn University, specializing in AI.</p>
+    <div class="hero__cta reveal-up">
+      <a href="#work" class="pill pill--blue magnetic" data-nav data-cursor="Go">See my work <span aria-hidden="true">→</span></a>
+      <a href="#contact" class="link-serif" data-nav>Get in touch</a>
+    </div>
+  </div>
 
-        <h1>Welcome to the Aya Daily!</h1>
-      
-      <p>Your Exclusive Newspaper Where Every Article Sparks Intrigue!</p>
-      
-     <div class="work_exp">
-      
-      <a href="work.html">
-  <img src="wex.jpg" alt="work-exp">
-</a>
-       </div>
-      <br>
-      
-    <div class="ecs">  
-      <a href="ecs.html">
-  <img src="ecs.jpg" alt="ecs">
-</a>
-       </div>
-      <br>
-      
-    <div class="academics">
-      <a href="academics.html">
-  <img src="Copy of Copy of Dark Brown Bold Modern Fashion Magazine Instagram Post.png" alt="academics">
-</a>
+  <div class="hero__art">
+    <svg class="scene" id="scene" viewBox="0 0 600 840" role="img" aria-label="Illustration: a black cat sitting by an arched blue window beside an orange tree">
+      <defs>
+        <clipPath id="winClip"><path d="M50 740 L50 300 A250 250 0 0 1 550 300 L550 740 Z"/></clipPath>
+      </defs>
+      <g class="win">
+        <path id="winShape" d="M50 740 L50 300 A250 250 0 0 1 550 300 L550 740 Z" fill="#1F4FCB"/>
+        <g clip-path="url(#winClip)" stroke="#EFE9E4" fill="none" class="win__bars">
+          <path d="M40 300 H560" stroke-width="16"/>
+          <path d="M133 300 V750 M217 300 V750 M300 40 V750 M383 300 V750 M467 300 V750" stroke-width="10"/>
+          <path d="M40 374 H560 M40 448 H560 M40 522 H560 M40 596 H560 M40 670 H560" stroke-width="10"/>
+          <path d="M120 300 A180 180 0 0 1 480 300" stroke-width="10"/>
+          <path d="M300 300 L540 165 M300 300 L430 80 M300 300 L170 80 M300 300 L60 165" stroke-width="10"/>
+        </g>
+      </g>
+      <!-- tree -->
+      <g class="px" data-depth="14"><g class="tree">
+        <g class="stems" fill="none" stroke="#18201D" stroke-width="2.6" stroke-linecap="round">
+          <path d="M156 596 C140 500 120 400 155 293"/>
+          <path d="M160 596 C175 470 260 360 311 244"/>
+          <path d="M163 596 C190 500 230 420 271 352"/>
+          <path d="M166 596 C260 520 380 470 455 363"/>
+          <path d="M158 596 C150 520 160 460 170 416"/>
+          <path d="M168 596 C220 560 260 600 309 588"/>
+          <path d="M311 244 C330 190 360 170 400 160"/>
+          <path d="M155 293 C130 240 110 220 92 205"/>
+          <path d="M455 363 C470 320 500 300 520 296"/>
+        </g>
+        <g class="leaves" fill="#18201D">
+          <use href="#leaf" transform="translate(92 205) rotate(-140) scale(1.1)"/>
+          <use href="#leaf" transform="translate(120 240) rotate(-20) scale(1.15)"/>
+          <use href="#leaf" transform="translate(138 330) rotate(160) scale(1.2)"/>
+          <use href="#leaf" transform="translate(140 380) rotate(195) scale(1.1)"/>
+          <use href="#leaf" transform="translate(205 300) rotate(-35) scale(1.2)"/>
+          <use href="#leaf" transform="translate(240 300) rotate(-150) scale(1.05)"/>
+          <use href="#leaf" transform="translate(330 205) rotate(-80) scale(1.15)"/>
+          <use href="#leaf" transform="translate(360 175) rotate(10) scale(1.2)"/>
+          <use href="#leaf" transform="translate(400 160) rotate(-60) scale(1)"/>
+          <use href="#leaf" transform="translate(280 270) rotate(30) scale(1.1)"/>
+          <use href="#leaf" transform="translate(395 420) rotate(-10) scale(1.2)"/>
+          <use href="#leaf" transform="translate(360 440) rotate(-120) scale(1.1)"/>
+          <use href="#leaf" transform="translate(470 330) rotate(-75) scale(1.15)"/>
+          <use href="#leaf" transform="translate(520 296) rotate(20) scale(1.05)"/>
+          <use href="#leaf" transform="translate(300 460) rotate(60) scale(1.15)"/>
+          <use href="#leaf" transform="translate(250 450) rotate(150) scale(1.1)"/>
+          <use href="#leaf" transform="translate(205 470) rotate(-60) scale(1.1)"/>
+          <use href="#leaf" transform="translate(225 560) rotate(-20) scale(1.15)"/>
+          <use href="#leaf" transform="translate(185 520) rotate(200) scale(1.05)"/>
+          <use href="#leaf" transform="translate(345 560) rotate(-30) scale(1.1)"/>
+        </g>
+        <g class="fruits">
+          <use href="#orange-fruit" class="fruit" data-cursor="Pick" x="155" y="293"/>
+          <use href="#orange-fruit" class="fruit" data-cursor="Pick" x="311" y="244"/>
+          <use href="#orange-fruit" class="fruit" data-cursor="Pick" x="271" y="352"/>
+          <use href="#orange-fruit" class="fruit" data-cursor="Pick" x="455" y="363"/>
+          <use href="#orange-fruit" class="fruit" data-cursor="Pick" x="170" y="440"/>
+          <use href="#orange-fruit" class="fruit" data-cursor="Pick" x="309" y="588"/>
+          <use href="#orange-fruit" class="fruit" data-cursor="Pick" x="492" y="482"/>
+        </g>
+      </g>
+      </g>
+      <!-- vase -->
+      <g class="px" data-depth="22"><g class="vase">
+        <path d="M118 820 L140 604 L180 588 L198 820 Z" fill="#F2480E"/>
+        <path d="M166 616 L172 614 L182 796 L176 796 Z" fill="#EFE9E4"/>
+      </g>
+      </g>
+      <!-- cat -->
+      <g class="px" data-depth="30"><g class="cat" data-cursor="Pet">
+        <path class="cat__tail" d="M520 812 C470 840 360 834 350 760 C342 700 372 668 336 632" fill="none" stroke="#18201D" stroke-width="13" stroke-linecap="round"/>
+        <path d="M447 560 C440 610 420 652 400 700 C382 750 386 806 402 820 L540 820 C550 770 532 720 502 686 C486 666 482 620 488 560 Z" fill="#18201D"/>
+        <path d="M404 700 L398 818 L414 818 L420 700 Z M426 700 L424 818 L440 818 L442 700 Z" fill="#18201D"/>
+        <ellipse cx="396" cy="818" rx="16" ry="5" fill="#18201D"/>
+        <ellipse cx="422" cy="818" rx="16" ry="5" fill="#18201D"/>
+        <g class="cat__head">
+          <path d="M424 496 Q444 516 464 517 Q484 516 506 494 Q514 530 499 556 Q485 576 465 577 Q443 576 431 556 Q418 530 424 496 Z" fill="#18201D"/>
+          <path d="M434 539 Q448 523 463 538 Q448 549 434 539 Z" fill="#F7F2EE"/>
+          <path d="M469 538 Q483 523 497 539 Q483 549 469 538 Z" fill="#F7F2EE"/>
+          <circle class="pupil" cx="450" cy="538" r="4.2" fill="#18201D"/>
+          <circle class="pupil" cx="483" cy="538" r="4.2" fill="#18201D"/>
+        </g>
+      </g></g>
+      <path d="M0 820 H600" stroke="#18201D" stroke-width="2" opacity=".15"/>
+    </svg>
+    <!-- TODO(netbadge): swap back once it's public
+    <p class="hero__caption reveal-up">Now: Technical Project Lead at Al&nbsp;Akhawayn’s Community Engagement Office, and co-founder of NetBadge.</p>
+    -->
+    <p class="hero__caption reveal-up">Open to Software Engineering, AI, IT Consulting, and IT Project Management opportunities: internships, new grad roles, and research positions..</p>
+    <a href="#about" class="hero__more" data-nav>See More</a>
+  </div>
+
+  <div class="portal" aria-hidden="true"></div>
+  <div class="scroll-hint" aria-hidden="true"><span></span>Scroll</div>
+</section>
+
+<!-- about -->
+<section class="about" id="about">
+  <div class="wrap">
+    <p class="label label--light">01 — About</p>
+    <p class="about__statement split-words">I’m a Computer Science senior at Al&nbsp;Akhawayn University, specializing in AI with a minor in Business. I work where engineering meets people: I gather requirements, plan the work, and then build it end to end.</p>
+
+    <div class="about__grid">
+      <div class="about__now">
+        <h3>Right now</h3>
+        <ul>
+          <li><span class="dot"></span><div><strong>Technical Project Lead</strong><br>Community Engagement Office, Al&nbsp;Akhawayn University</div></li>
+          <!-- TODO(netbadge)
+          <li><span class="dot"></span><div><strong>Co-founder</strong><br>NetBadge, a multilingual conversation-recording badge</div></li>
+          -->
+          <li><span class="dot"></span><div><strong>Undergraduate researcher</strong><br>Research Assistant in Quantum Machine Learning</div></li>
+        </ul>
       </div>
-      <br>
-      
-    <div class="awards">    
-      <a href="awards.html">
-  <img src="awa.png">
-</a>
-       </div>
-
-       <br>
-      
-     <div class="contact">  
-      <a href="contact.html">
-  <img src="cont.png">
-</a>
+      <div class="stats">
+        <div class="stat"><span class="stat__num" data-count="5000" data-suffix="+">0</span><span class="stat__txt">active users on Kudos, a university platform I helped rebuild</span></div>
+        <div class="stat"><span class="stat__num" data-count="12" data-prefix="~">0</span><span class="stat__txt">people on the banking-platform team I coordinated tasks for</span></div>
+        <div class="stat"><span class="stat__num" data-count="2000">0</span><span class="stat__txt">utterances in my open code-switched speech benchmark</span></div>
+        <div class="stat"><span class="stat__num" data-count="4">0</span><span class="stat__txt">languages: Arabic, French, English and Japanese</span></div>
       </div>
-    
+    </div>
+  </div>
+  <div class="tumble" aria-hidden="true">
+    <svg viewBox="-45 -45 90 90"><use href="#orange-fruit"/></svg>
+    <svg viewBox="-45 -45 90 90"><use href="#orange-fruit"/></svg>
+    <svg viewBox="-45 -45 90 90"><use href="#orange-fruit"/></svg>
+  </div>
+</section>
 
-    </body>
+<!-- experience -->
+<section class="exp" id="experience">
+  <div class="exp__pin">
+    <div class="exp__head wrap">
+      <p class="label">02 — Experience</p>
+      <h2 class="h2">A short walk through <em>where I’ve worked.</em></h2>
+    </div>
+    <div class="exp__track">
+      <article class="job job--blue">
+        <div class="job__top"><span class="job__year">2022</span><span class="job__shape shape-arch"></span></div>
+        <h3>Teaching Assistant, Computer Science</h3>
+        <dl class="meta">
+          <div><dt>Where</dt><dd>Rabat American School</dd></div>
+          <div><dt>When</dt><dd>Jun 2022 – Aug 2023</dd></div>
+          <div><dt>Type</dt><dd>Summer, part-time</dd></div>
+        </dl>
+        <ul>
+          <li>Taught Python for Robotics to 40+ students.</li>
+          <li>Prepared course material and lab sessions.</li>
+        </ul>
+        <p class="tags"><span>Python</span><span>Robotics</span><span>Teaching</span></p>
+      </article>
 
+      <article class="job job--orange">
+        <div class="job__top"><span class="job__year">2024</span><span class="job__shape shape-circle"></span></div>
+        <h3>Software Developer</h3>
+        <dl class="meta">
+          <div><dt>Where</dt><dd><a href="https://neocedrus.com/" target="_blank" rel="noopener" data-cursor="Visit">neoCedrus</a>, Ifrane</dd></div>
+          <div><dt>When</dt><dd>Jan 2024 – Jan 2026</dd></div>
+          <div><dt>Type</dt><dd>Part-time</dd></div>
+        </dl>
+        <ul>
+          <li>Developed and maintained three official platforms for the university’s Center for Learning Excellence: Kudos (5,000+ active users), Behive and Xpress (1,000+ each).</li>
+          <li>Refactored the legacy Kudos tutor and mentor-booking platform and shipped a new version.</li>
+          <li>Built v1 of Behive, the official part-time jobs platform, from scratch with the team.</li>
+        </ul>
+        <p class="tags"><span>MERN</span><span>PostgreSQL</span><span>Agile</span></p>
+      </article>
 
+      <article class="job job--ink">
+        <div class="job__top"><span class="job__year">2025</span><span class="job__shape shape-half"></span></div>
+        <h3>Software Developer / Cybersecurity Intern</h3>
+        <dl class="meta">
+          <div><dt>Where</dt><dd>Nevo-Technologies, Rabat</dd></div>
+          <div><dt>When</dt><dd>Jun – Aug 2025</dd></div>
+          <div><dt>Type</dt><dd>Internship</dd></div>
+        </dl>
+        <ul>
+          <li>Developed and tested components (unit, integration, end-to-end) in an enterprise banking environment.</li>
+          <li>Worked with cross-functional teams to turn business and security requirements into maintainable software.</li>
+        </ul>
+        <p class="tags"><span>Testing</span><span>Security</span><span>Banking</span></p>
+      </article>
 
+      <article class="job job--blue">
+        <div class="job__top"><span class="job__year">2026</span><span class="job__shape shape-arch"></span></div>
+        <h3>Fintech Software Design and Engineering Intern</h3>
+        <dl class="meta">
+          <div><dt>Where</dt><dd>Global Performance Business Services, Casablanca</dd></div>
+          <div><dt>When</dt><dd>Jun – Aug 2026</dd></div>
+          <div><dt>Team</dt><dd>~12 people</dd></div>
+        </dl>
+        <ul>
+          <li>Built features in Java/Spring Boot and React/TypeScript, with Keycloak access control, for a banking-branch platform used by major Moroccan banks.</li>
+          <li>Turned the needs of bank agents and branch directors into technical work, and coordinated tasks and deliverables.</li>
+          <li>Designed UX mockups and screens alongside development.</li>
+        </ul>
+        <p class="tags"><span>Java</span><span>Spring Boot</span><span>React</span><span>TypeScript</span><span>Keycloak</span></p>
+      </article>
 
+      <article class="job job--orange">
+        <div class="job__top"><span class="job__year">Now</span><span class="job__shape shape-circle"></span></div>
+        <h3>Technical Project Lead</h3>
+        <dl class="meta">
+          <div><dt>Where</dt><dd>Community Engagement Office, Al&nbsp;Akhawayn University</dd></div>
+          <div><dt>When</dt><dd>Sep 2026 – Present</dd></div>
+          <div><dt>Type</dt><dd>Part-time</dd></div>
+        </dl>
+        <ul>
+          <li>Nominated by university leadership to lead a flagship student-engagement initiative; I own requirements, planning, delivery and stakeholder communication.</li>
+          <li>Building an application that automates the office’s workflow and replaces decade-old databases with a structured data layer.</li>
+          <li>Creating dashboards and data visualizations for the office’s staff.</li>
+        </ul>
+        <p class="tags"><span>Project lead</span><span>Data</span><span>Dashboards</span></p>
+      </article>
 
+      <!-- TODO(netbadge)
+      <article class="job job--ink">
+        <div class="job__top"><span class="job__year">Now</span><span class="job__shape shape-half"></span></div>
+        <h3>Co-founder</h3>
+        <dl class="meta">
+          <div><dt>Where</dt><dd>NetBadge</dd></div>
+          <div><dt>When</dt><dd>Sep 2026 – Present</dd></div>
+          <div><dt>Team</dt><dd>5 people</dd></div>
+        </dl>
+        <ul>
+          <li>Building a conversation-recording lanyard badge and React Native app that turns a multilingual founder event into a ranked follow-up list.</li>
+          <li>Built the switch-aware speech recognition pipeline for Darija, French, English and MSA.</li>
+          <li>Planning a consent-first MVP and a live pilot with 10 founders.</li>
+        </ul>
+        <p class="tags"><span>Speech AI</span><span>React Native</span><span>Startup</span></p>
+      </article>
+      -->
+
+      <div class="job job--end">
+        <p>Next stop?</p>
+        <a href="#contact" class="next-circle magnetic" data-nav data-cursor="Hi!"><span>Your team</span></a>
+      </div>
+    </div>
+
+    <!-- dog -->
+    <div class="walk">
+      <div class="walk__line"></div>
+      <div class="walk__dog">
+        <svg viewBox="0 0 220 200" aria-hidden="true">
+          <g class="dog">
+            <path class="dog__tail" d="M44 112 C24 104 22 82 32 68" fill="none" stroke="#18201D" stroke-width="6" stroke-linecap="round"/>
+            <g class="leg leg--b1"><rect x="50" y="122" width="9" height="62" rx="4" fill="#18201D"/><ellipse cx="54" cy="185" rx="8" ry="5" fill="#F2480E"/></g>
+            <g class="leg leg--b2"><rect x="64" y="122" width="9" height="62" rx="4" fill="#18201D"/><ellipse cx="68" cy="185" rx="8" ry="5" fill="#F2480E"/></g>
+            <g class="leg leg--f1"><rect x="118" y="122" width="9" height="62" rx="4" fill="#18201D"/><ellipse cx="124" cy="185" rx="8" ry="5" fill="#F2480E"/></g>
+            <g class="leg leg--f2"><rect x="132" y="122" width="9" height="62" rx="4" fill="#18201D"/><ellipse cx="138" cy="185" rx="8" ry="5" fill="#F2480E"/></g>
+            <path d="M40 112 C40 96 60 92 90 94 L124 96 C142 97 148 108 145 120 C142 134 124 137 104 136 L62 136 C46 136 40 126 40 112 Z" fill="#18201D"/>
+            <path d="M120 104 L140 40 L160 44 L146 112 Z" fill="#18201D"/>
+            <path d="M128 76 L151 81 L148 93 L124 88 Z" fill="#1F4FCB"/>
+            <path d="M138 40 C138 26 152 18 165 22 L206 36 C212 38 211 46 204 47 L162 52 C148 54 138 52 138 40 Z" fill="#18201D"/>
+            <path d="M200 35 C208 36 213 40 210 45 C207 47 202 46 199 44 Z" fill="#1F4FCB"/>
+            <path d="M152 22 C148 10 158 4 162 14 C165 6 174 10 168 22 Z" fill="#1F4FCB"/>
+            <path class="dog__ear" d="M144 30 C130 36 126 62 134 76 C143 74 150 52 150 34 Z" fill="#1F4FCB"/>
+            <circle cx="170" cy="32" r="3.2" fill="#EFE9E4"/>
+          </g>
+        </svg>
+      </div>
+      <div class="walk__years"><span>2022</span><span>2024</span><span>2025</span><span>2026</span><span>Now</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- work -->
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="work__head">
+      <div>
+        <p class="label">03 — Selected work</p>
+        <h2 class="h2">Things I’ve <em>built</em> &amp; am building.</h2>
+      </div>
+      <div class="finder">
+        <label class="search-pill" data-cursor="Type">
+          <input id="projectSearch" type="search" placeholder="Search projects, e.g. Java" autocomplete="off" aria-label="Search projects">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.8 15.8 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </label>
+        <button class="filter-pill" id="filterToggle" aria-expanded="false" aria-controls="chips" aria-label="Show filters" data-cursor="Filter">
+          <svg viewBox="0 0 32 24" width="30" height="22" aria-hidden="true"><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5h26M3 12h26M3 19h26"/></g><g fill="currentColor"><circle cx="21" cy="5" r="3"/><circle cx="10" cy="12" r="3"/><circle cx="18" cy="19" r="3"/></g></svg>
+        </button>
+      </div>
+    </div>
+    <div class="chips" id="chips" hidden></div>
+
+    <div class="viewer">
+      <div class="viewer__media">
+        <div class="viewer__frame" id="viewerFrame"></div>
+        <div class="viewer__count"><span id="vIdx">01</span> / <span id="vTotal">06</span></div>
+      </div>
+      <div class="viewer__info">
+        <p class="viewer__kicker" id="vKicker"></p>
+        <h3 class="viewer__title" id="vTitle"></h3>
+        <dl class="meta meta--4" id="vMeta"></dl>
+        <p class="viewer__desc" id="vDesc"></p>
+        <ul class="viewer__points" id="vPoints"></ul>
+        <p class="viewer__links" id="vLinks"></p>
+        <button class="next-circle next-circle--project magnetic" id="nextProject" data-cursor="Next"><span>Next Project</span></button>
+      </div>
+    </div>
+    <ol class="work__index" id="workIndex"></ol>
+    <p class="empty" id="workEmpty" hidden>No projects match that search. Try “Python” or “React”.</p>
+  </div>
+</section>
+
+<!-- leadership -->
+<section class="beyond" id="beyond">
+  <div class="wrap">
+    <p class="label label--light">04 — Leadership</p>
+    <h2 class="h2 h2--light">Beyond the code.</h2>
+    <ul class="rows">
+      <li class="row"><span class="row__n">01</span><div class="row__body"><h3>Student Representative</h3><p>Student Distributed Leadership Council, Al&nbsp;Akhawayn University. I work on AUI’s Strategic Plan for 2030.</p></div><span class="row__big">2030</span></li>
+      <li class="row"><span class="row__n">02</span><div class="row__body"><h3>Founder &amp; President, Student Government · Founder, STEM Club</h3><p>Groupe Scolaire High-Tech. Ran 20 council events on sustainability and community engagement, with 80% student involvement in high school and 60% in middle school.</p></div><span class="row__big">20 events</span></li>
+      <li class="row"><span class="row__n">03</span><div class="row__body"><h3>Head of Sponsorship</h3><p>Jeunes Leaders Marocains, Sep 2023 – Feb 2024. Contacted 60 companies and closed 5 sponsorship deals.</p></div><span class="row__big">5 deals</span></li>
+      <li class="row"><span class="row__n">04</span><div class="row__body"><h3>Captain of the Debate Team</h3><p>Groupe Scolaire High-Tech. Led a team of 8 to wins at regional and AEFE competitions.</p></div><span class="row__big">Team of 8</span></li>
+      <li class="row"><span class="row__n">05</span><div class="row__body"><h3>Event Organizer &amp; Startup Lead</h3><p>Google Developer Groups. Worked with Moroccan startups YouCan, Claro and DoctorIA on their presence at events, from presentations to logistics.</p></div><span class="row__big">GDG</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- education -->
+<section class="edu" id="education">
+  <div class="wrap">
+    <p class="label">05 — Education</p>
+    <h2 class="h2">From Rabat to Ifrane <em>to Osaka.</em></h2>
+    <div class="edu__grid">
+      <article class="school">
+        <div class="school__arch school__arch--blue">
+          <svg viewBox="0 0 300 300" aria-hidden="true">
+            <circle cx="215" cy="95" r="32" fill="#F2480E"/>
+            <path d="M0 240 L80 140 L130 190 L190 120 L300 240 V300 H0Z" fill="#EFE9E4" opacity=".9"/>
+            <path d="M60 300 L90 200 L120 300Z M90 300 L118 214 L146 300Z M190 300 L222 190 L254 300Z" fill="#18201D"/>
+          </svg>
+        </div>
+        <p class="school__when">Expected 2027</p>
+        <h3>Al&nbsp;Akhawayn University</h3>
+        <p class="school__where">Ifrane, Morocco</p>
+        <p>B.S. in Computer Science, AI specialization, with a minor in Business Administration. Undergraduate research in quantum machine learning, Dean's List.</p>
+      </article>
+      <article class="school">
+        <div class="school__arch school__arch--ink">
+          <svg viewBox="0 0 300 300" aria-hidden="true">
+            <circle cx="150" cy="130" r="70" fill="#F2480E"/>
+            <path d="M70 175 H230 M80 195 H220" stroke="#EFE9E4" stroke-width="10"/>
+            <path d="M100 175 V300 M200 175 V300" stroke="#EFE9E4" stroke-width="12"/>
+            <path d="M0 270 Q150 240 300 270 V300 H0Z" fill="#1F4FCB"/>
+          </svg>
+        </div>
+        <p class="school__when">Jan – Jun 2026</p>
+        <h3>Kansai Gaidai University</h3>
+        <p class="school__where">Osaka, Japan · Exchange</p>
+        <p>Asian Studies, with courses in Business in the Asia Pacific and AI, plus intensive Japanese.</p>
+      </article>
+      <article class="school">
+        <div class="school__arch school__arch--orange">
+          <svg viewBox="0 0 300 300" aria-hidden="true">
+            <rect x="70" y="150" width="160" height="110" fill="#1F4FCB"/>
+            <path d="M150 150 V260" stroke="#EFE9E4" stroke-width="6"/>
+            <path d="M60 150 L150 95 L240 150Z" fill="#18201D"/>
+            <circle cx="70" cy="70" r="6" fill="#EFE9E4"/><circle cx="230" cy="60" r="5" fill="#EFE9E4"/><circle cx="190" cy="100" r="4" fill="#EFE9E4"/>
+          </svg>
+        </div>
+        <p class="school__when">2017 – 2023</p>
+        <h3>Groupe Scolaire High-Tech</h3>
+        <p class="school__where">Morocco</p>
+        <p>International Baccalaureate, Mathematical Sciences B, Mention Très Bien.</p>
+      </article>
+    </div>
+    <p class="certs"><strong>Certifications:</strong> IBM Quantum Experience (Qubit by Qubit) · Soliya Global Exchange and Leadership (Aspen Institute)</p>
+  </div>
+</section>
+
+<!-- skills -->
+<section class="skills" id="skills">
+  <div class="marquee" data-dir="1"><div class="marquee__inner">Java <i></i> TypeScript <i></i> Python <i></i> Spring Boot <i></i> React <i></i> Node.js <i></i> PostgreSQL <i></i> Keycloak <i></i></div></div>
+  <div class="marquee marquee--outline" data-dir="-1"><div class="marquee__inner">Requirements <i></i> Scrum <i></i> Stakeholders <i></i> UX design <i></i> Data viz <i></i> Testing <i></i> Delivery <i></i></div></div>
+
+  <div class="wrap skills__grid">
+    <div>
+      <p class="label">06 — Toolbox</p>
+      <div class="skill-group"><h3>Languages</h3><p>Java, TypeScript, JavaScript, Python, SQL, C, C++</p></div>
+      <div class="skill-group"><h3>Frameworks &amp; APIs</h3><p>Spring Boot, Node.js, Express, React, Tailwind CSS, REST APIs, Keycloak</p></div>
+      <div class="skill-group"><h3>Data &amp; AI</h3><p>PostgreSQL, MongoDB, Hugging Face, Whisper, wav2vec2, Tableau (learning)</p></div>
+      <div class="skill-group"><h3>Tools</h3><p>Git, Docker, Postman, Jira</p></div>
+      <div class="skill-group"><h3>Ways of working</h3><p>Requirements gathering, stakeholder management, planning &amp; delivery, Scrum, PRD/SRD, UX design, unit/integration/e2e testing, code review</p></div>
+    </div>
+    <div class="langs">
+      <p class="label">I speak</p>
+      <div class="lang"><span class="lang__hi" lang="ar" dir="rtl">مرحبا</span><span class="lang__name">Arabic</span><span class="lang__lvl"><i style="--w:100%"></i></span><span class="lang__note">Native</span></div>
+      <div class="lang"><span class="lang__hi" lang="fr">Bonjour</span><span class="lang__name">French</span><span class="lang__lvl"><i style="--w:100%"></i></span><span class="lang__note">Native / bilingual</span></div>
+      <div class="lang"><span class="lang__hi">Hello</span><span class="lang__name">English</span><span class="lang__lvl"><i style="--w:100%"></i></span><span class="lang__note">Native / bilingual</span></div>
+      <div class="lang"><span class="lang__hi" lang="ja">こんにちは</span><span class="lang__name">Japanese</span><span class="lang__lvl"><i style="--w:45%"></i></span><span class="lang__note">Limited working</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- contact -->
+<section class="contact" id="contact">
+  <div class="contact__sun" aria-hidden="true"></div>
+  <div class="badge" aria-hidden="true">
+    <svg viewBox="0 0 200 200">
+      <defs><path id="badgeRing" d="M100 100 m-78 0 a78 78 0 1 1 156 0 a78 78 0 1 1 -156 0"/></defs>
+      <circle cx="100" cy="100" r="98" fill="#18201D"/>
+      <text font-family="DM Sans, sans-serif" font-size="15.5" font-weight="700" letter-spacing="3.2" fill="#F7F2EE"><textPath href="#badgeRing">OPEN TO WORK · INTERNSHIPS · FULL-TIME · </textPath></text>
+    </svg>
+    <span class="badge__logo"><span class="logo"><span class="logo__sq"></span><span class="logo__dot"></span><span class="logo__a">a</span></span></span>
+  </div>
+  <div class="contact__inner wrap">
+    <p class="label label--light">07 — Contact</p>
+    <h2 class="contact__title"><span class="line"><span>Let’s build</span></span><span class="line"><span><em>something.</em></span></span></h2>
+    <p class="contact__sub">I’m open to internships and full-time roles in software engineering and technical project management, and I’m happy to relocate.</p>
+    <div class="contact__mail">
+      <a href="mailto:sbia.aya@gmail.com" class="mail" data-cursor="Write">sbia.aya@gmail.com</a>
+      <button class="copy" id="copyEmail" data-cursor="Copy">Copy</button>
+    </div>
+    <ul class="socials">
+      <li><a href="https://www.linkedin.com/in/aya-sbia-68a526230" target="_blank" rel="noopener" class="pill pill--cream magnetic">LinkedIn ↗</a></li>
+      <li><a href="https://github.com/asbia" target="_blank" rel="noopener" class="pill pill--cream magnetic">GitHub ↗</a></li>
+      <li><a href="assets/Aya-Sbia-Resume.pdf" target="_blank" rel="noopener" class="pill pill--cream magnetic">Résumé ↗</a></li>
+    </ul>
+  </div>
+  <footer class="footer wrap">
+    <span>Rabat, Morocco</span>
+    <span>© 2026 Aya Sbia</span>
+    <a href="#top" data-nav>Back to top ↑</a>
+  </footer>
+  <svg class="peek" viewBox="0 0 120 80" aria-hidden="true">
+    <path d="M10 80 Q14 20 18 6 Q34 22 60 22 Q86 22 102 6 Q106 20 110 80Z" fill="#18201D"/>
+    <path d="M30 50 Q42 36 54 50 Q42 58 30 50Z M66 50 Q78 36 90 50 Q78 58 66 50Z" fill="#F7F2EE"/>
+    <circle class="pupil" cx="43" cy="49" r="4" fill="#18201D"/><circle class="pupil" cx="78" cy="49" r="4" fill="#18201D"/>
+  </svg>
+</section>
+
+</main>
+
+<!-- ctrl+k palette -->
+<div class="palette" id="palette" hidden>
+  <div class="palette__backdrop" data-close></div>
+  <div class="palette__box" role="dialog" aria-modal="true" aria-label="Search">
+    <label class="palette__search">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.8 15.8 21 21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <input id="paletteInput" type="text" placeholder="Where to? Try “work” or “email”" autocomplete="off" aria-label="Search sections and actions">
+      <kbd>esc</kbd>
+    </label>
+    <ul class="palette__list" id="paletteList" role="listbox"></ul>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/projects.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
